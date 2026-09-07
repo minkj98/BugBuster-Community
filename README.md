@@ -45,7 +45,7 @@ Spring Legacy(비 Spring Boot) 기반으로 진행한 2인 팀 프로젝트입�
 ## 아키텍처
 
 ```
-Controller (www.silver.hom)
+Controller (www.silver.controller)
         │
         ▼
 Service (www.silver.service)
@@ -74,7 +74,7 @@ BugBuster-Community/
 │   └── data.sql            # 초기 데이터 (프로그래밍 문제 시드)
 ├── src/main/
 │   ├── java/www/silver/
-│   │   ├── hom/            # 컨트롤러
+│   │   ├── controller/     # 컨트롤러
 │   │   ├── service/        # 서비스 계층
 │   │   ├── dao/            # DAO 계층
 │   │   ├── vo/             # 값 객체
@@ -138,7 +138,6 @@ mvn clean package
 생성된 `target/*.war`를 Tomcat에 배포합니다.
 
 ## 개선 과제
-- 패키지 네이밍 정리: `www.silver.hom` → `...controller`
 - 하드코딩된 업로드 경로(`file:/C:/tmp/`) OS 비의존적으로 변경
 - 테스트 코드 추가(`src/test` 부재)
 - log4j 1.2(지원 종료) → logback 또는 log4j2 마이그레이션
