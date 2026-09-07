@@ -15,6 +15,7 @@
 		base-package="
         www.silver.service,
         www.silver.dao,
+        www.silver.client,
         www.silver.util,
         www.silver.scheduler,
         www.silver.batch,
