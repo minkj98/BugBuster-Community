@@ -1,0 +1,70 @@
+<beans:beans
+    xmlns="http://www.springframework.org/schema/mvc"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:beans="http://www.springframework.org/schema/beans"
+    xmlns:context="http://www.springframework.org/schema/context"
+    xsi:schemaLocation="
+        http://www.springframework.org/schema/mvc   http://www.springframework.org/schema/mvc/spring-mvc.xsd
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+
+    <!-- MVC 기본 설정 -->
+    <annotation-driven/>
+
+    <!-- 정적 리소스 -->
+    <resources mapping="/resources/**" location="/resources/"/>
+    <resources mapping="/tmp/**" location="file:/C:/tmp/"/>
+
+    <!-- ViewResolver -->
+    <beans:bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+        <beans:property name="prefix" value="/WEB-INF/views/"/>
+        <beans:property name="suffix" value=".jsp"/>
+    </beans:bean>
+
+    <!-- Multipart Resolver -->
+    <beans:bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+        <beans:property name="maxUploadSize" value="10485760"/>
+    </beans:bean>
+
+    <!-- 상수 Bean -->
+    <beans:bean id="uploadPath" class="java.lang.String">
+        <beans:constructor-arg value="/tmp"/>
+    </beans:bean>
+    <beans:bean id="cname" class="java.lang.String">
+        <beans:constructor-arg value="Human"/>
+    </beans:bean>
+
+    <!-- 인터셉터 - 올바른 구조로 수정 -->
+    <interceptors>
+        <interceptor>
+            <mapping path="/**"/>
+            <!-- 제외 URL들 -->
+            <exclude-mapping path="/"/>
+            <exclude-mapping path="/alltext"/>
+            <exclude-mapping path="/loginAccount"/>
+            <exclude-mapping path="/logout"/>
+            <exclude-mapping path="/signup"/>
+            <exclude-mapping path="/checkPassword"/>
+            <exclude-mapping path="/userIdCheck"/>
+            <exclude-mapping path="/join"/>
+            <exclude-mapping path="/QABoard"/>
+            <exclude-mapping path="/boardview"/>
+            <exclude-mapping path="/paging"/>
+            <exclude-mapping path="/textview"/>
+            <exclude-mapping path="/itNews"/>
+            <exclude-mapping path="/problems"/>
+            <exclude-mapping path="/resources/**"/>
+            <exclude-mapping path="/static/**"/>
+            <exclude-mapping path="/css/**"/>
+            <exclude-mapping path="/js/**"/>
+            <exclude-mapping path="/images/**"/>
+            <exclude-mapping path="/tmp/**"/>
+            <!-- 인터셉터 빈을 직접 정의 -->
+            <beans:bean class="www.silver.interceptor.AuthInterceptor"/>
+        </interceptor>
+    </interceptors>
+
+    <!-- 웹 레이어만 스캔 -->
+    <context:component-scan base-package="www.silver.hom, www.silver.interceptor"/>
+
+</beans:beans>

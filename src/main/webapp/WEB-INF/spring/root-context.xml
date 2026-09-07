@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:jdbc="http://www.springframework.org/schema/jdbc"
+	xmlns:task="http://www.springframework.org/schema/task"
+	xsi:schemaLocation="
+          http://www.springframework.org/schema/beans  http://www.springframework.org/schema/beans/spring-beans.xsd
+          http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
+          http://www.springframework.org/schema/jdbc   http://www.springframework.org/schema/jdbc/spring-jdbc.xsd
+          http://www.springframework.org/schema/task   http://www.springframework.org/schema/task/spring-task.xsd">
+
+	<!-- 공통 컴포넌트 스캔 (웹 레이어 제외) -->
+	<context:component-scan
+		base-package="
+        www.silver.service,
+        www.silver.dao,
+        www.silver.util,
+        www.silver.scheduler,
+        www.silver.batch,
+        www.silver.exception" />
+
+	<!-- @Scheduled 활성화 (root 1곳만) -->
+	<task:annotation-driven />
+
+	<!-- 외부 설정 파일 (git 미추적, config.properties.example 참고) -->
+	<context:property-placeholder
+		location="classpath:config.properties" ignore-unresolvable="true" />
+
+	<!-- DataSource -->
+	<bean id="dataSource"
+		class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
+		<property name="driverClassName"
+			value="com.mysql.cj.jdbc.Driver" />
+		<property name="url" value="${db.url}" />
+		<property name="username" value="${db.username}" />
+		<property name="password" value="${db.password}" />
+	</bean>
+
+	<bean id="uploadPath" class="java.lang.String">
+		<constructor-arg value="/tmp" />
+	</bean>
+
+
+	<!-- Batch 스키마 자동 생성 -->
+	<bean id="batchPopulator"
+		class="org.springframework.jdbc.datasource.init.ResourceDatabasePopulator">
+		<property name="scripts">
+			<list>
+				<value>classpath:org/springframework/batch/core/schema-mysql.sql
+				</value>
+			</list>
+		</property>
+		<property name="continueOnError" value="true" />
+	</bean>
+
+	<bean id="batchSchemaInitializer"
+		class="org.springframework.jdbc.datasource.init.DataSourceInitializer">
+		<property name="dataSource" ref="dataSource" />
+		<property name="databasePopulator" ref="batchPopulator" />
+		<property name="enabled" value="${batch.schema.init:true}" />
+	</bean>
+
+	<!-- MyBatis -->
+	<bean id="sqlSessionFactory"
+		class="org.mybatis.spring.SqlSessionFactoryBean">
+		<property name="dataSource" ref="dataSource" />
+		<property name="mapperLocations"
+			value="classpath:/mapper/*Mapper.xml" />
+	</bean>
+
+	<bean id="sqlSession"
+		class="org.mybatis.spring.SqlSessionTemplate">
+		<constructor-arg ref="sqlSessionFactory" />
+	</bean>
+
+	<!-- 네이버 API Key (config.properties에서 로드, NewsServiceImpl이 SpEL로 참조) -->
+	<bean id="naverApiConfig"
+		class="org.springframework.beans.factory.config.PropertiesFactoryBean">
+		<property name="location" value="classpath:config.properties" />
+	</bean>
+
+	 <bean id="objectMapper" class="com.fasterxml.jackson.databind.ObjectMapper" />
+
+	<!-- 공통 예외 매핑 -->
+	<bean
+		class="org.springframework.web.servlet.handler.SimpleMappingExceptionResolver">
+		<property name="exceptionMappings">
+			<props>
+				<prop key="www.silver.exception.CustomException">error</prop>
+			</props>
+		</property>
+		<property name="exceptionAttribute" value="exception" />
+	</bean>
+	
+	<bean id="restTemplate" class="org.springframework.web.client.RestTemplate"/>
+	
+</beans>

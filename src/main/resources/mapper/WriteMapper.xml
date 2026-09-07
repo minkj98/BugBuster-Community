@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<mapper namespace="www.silver.dao.WriteDAO">
+	<insert id="insertone" parameterType="www.silver.vo.BoardVO"
+		useGeneratedKeys="true" keyProperty="postNum">
+		INSERT INTO board (title, content,
+		codeContent, createdAt,
+		writer, programmingLanguage)
+		VALUES (#{title},
+		#{content}, #{codeContent}, default, #{writer},
+		#{programmingLanguage})
+	</insert>
+
+	<insert id="board_attach" parameterType="map"
+		useGeneratedKeys="true" keyProperty="id">
+		INSERT INTO board_attach (postNum,
+		filename, createdAt)
+		VALUES (#{postNum}, #{filename}, default)
+	</insert>
+
+	<select id="selectall" resultType="www.silver.vo.BoardVO">
+		SELECT postNum, writer, title,
+		content, codeContent, createdAt, views
+		FROM board
+		ORDER BY postNum DESC
+	</select>
+
+	<select id="pagingList" parameterType="java.util.HashMap"
+		resultType="www.silver.vo.BoardVO">
+		SELECT *
+		FROM board
+		ORDER BY postNum DESC
+		LIMIT #{start},
+		#{limit}
+	</select>
+
+	<select id="boardCount" resultType="int">
+		SELECT COUNT(*) FROM board
+	</select>
+
+	<select id="selectOne" resultType="www.silver.vo.BoardVO"
+		parameterType="Long">
+		select * from board where postNum = #{postNum}
+	</select>
+
+	<select id="getAttach" resultType="String" parameterType="Long">
+		select
+		filename from board_attach where postNum = #{postNum}
+	</select>
+
+	<delete id="deleteone" parameterType="Long">
+		delete from board where
+		postNum = #{postNum}
+	</delete>
+
+	<update id="modifyone" parameterType="www.silver.vo.BoardVO">
+		UPDATE board
+		SET
+		title =
+		#{title},
+		content = #{content},
+		codeContent = #{codeContent},
+		programmingLanguage = #{programmingLanguage}
+		WHERE postNum = #{postNum}
+	</update>
+
+	<delete id="deleteAttach" parameterType="Long">
+		delete from board_attach
+		where postNum = #{postNum}
+	</delete>
+
+	<update id="viewCount" parameterType="www.silver.vo.BoardVO">
+		update board set views =
+		views + 1 where postNum = #{postNum}
+	</update>
+
+	<insert id="insertComment"
+		parameterType="www.silver.vo.CommentVO" useGeneratedKeys="true"
+		keyProperty="commentId">
+		INSERT INTO comment (
+		postNum,
+		userId,
+		content,
+		parentCommentId,
+		depth,
+		isDeleted
+		) VALUES (
+		#{postNum},
+		#{userId},
+		#{content},
+		#{parentCommentId},
+		#{depth},
+		#{isDeleted}
+
+		)
+	</insert>
+
+	<select id="selectAllComment" parameterType="long"
+		resultType="www.silver.vo.CommentVO">
+
+		SELECT c.commentId AS commentId ,
+		c.postNum AS postNum ,
+		c.userId AS userId ,
+		c.content AS content ,
+		c.createdAt AS createdAt ,
+		c.parentCommentId AS parentCommentId ,
+		p.filename AS profileImg
+		FROM comment c
+		LEFT JOIN profile_attach p
+		ON p.user_id = c.userId
+		WHERE c.postNum = #{postNum}
+		ORDER BY c.createdAt ASC
+
+	</select>
+
+
+
+
+	<delete id="deleteComment" parameterType="map">
+		DELETE FROM comment
+		WHERE commentId = #{commentId}
+		AND userId = #{userId}
+	</delete>
+
+	<update id="updateComment" parameterType="map">
+		UPDATE comment
+		SET
+		content = #{content}
+		WHERE commentId = #{commentId}
+		AND postNum =
+		#{postNum}
+	</update>
+
+	<!-- Retrieve a comment by its ID -->
+	<select id="getCommentById" parameterType="int"
+		resultType="www.silver.vo.CommentVO">
+		SELECT commentId, postNum, userId, content,
+		parentCommentId, depth,
+		isDeleted, createdAt, updateAt
+		FROM
+		comment
+		WHERE
+		commentId = #{parentCommentId} AND isDeleted = FALSE
+	</select>
+
+	<!-- Insert a new comment reply -->
+	<insert id="addCommentReply"
+		parameterType="www.silver.vo.CommentVO">
+		INSERT INTO comment (postNum, userId, content,
+		parentCommentId, depth,isDeleted)
+		VALUES (#{postNum}, #{userId},
+		#{content}, #{parentCommentId}, #{depth},
+		FALSE)
+	</insert>
+
+	<update id="updateReplyComment" parameterType="map">
+		UPDATE comment
+		SET
+		content = #{content}
+		WHERE commentId = #{commentId}
+		AND postNum =
+		#{postNum}
+		AND depth > 0
+	</update>
+
+	<select id="getTotalViewsByUserId" parameterType="String"
+		resultType="int">
+		SELECT COALESCE(SUM(views), 0) AS total_views
+		FROM board
+		WHERE writer = #{userId}
+	</select>
+
+	<select id="gettotallikes" parameterType="String"
+		resultType="int">
+		SELECT COUNT(l.likeNum) as total_likes
+		FROM board b
+		LEFT JOIN
+		likes l ON b.postNum = l.postNum
+		WHERE b.writer = #{userId}
+	</select>
+
+	<select id="likeboard" parameterType="java.util.HashMap"
+		resultType="www.silver.vo.BoardVO">
+		SELECT b.postNum, b.writer, b.title, b.content, b.createdAt
+		FROM likes l
+		JOIN board b ON l.postNum = b.postNum
+		WHERE l.user_id =
+		#{userId}
+		ORDER BY b.createdAt DESC
+		LIMIT #{start},#{limit}
+	</select>
+
+	<select id="clicktotallikes" parameterType="String"
+		resultType="int">
+		SELECT COUNT(DISTINCT l.postNum) as total_likes
+		FROM likes l
+		JOIN board b ON l.postNum = b.postNum
+		WHERE l.user_id = #{userId}
+	</select>
+
+	<delete id="deletemember" parameterType="String">
+		DELETE FROM member WHERE
+		user_id = #{userId};
+	</delete>
+
+	<select id="getTotalCount" resultType="int">
+		SELECT COUNT(*) FROM board
+	</select>
+
+
+
+
+
+
+</mapper>

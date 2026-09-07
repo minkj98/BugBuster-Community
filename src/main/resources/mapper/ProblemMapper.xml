@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="www.silver.dao.ProblemDAO">
+    <select id="getAllProblems" resultType="www.silver.vo.ProblemVO">
+        SELECT problemId, title, description, sampleInput, sampleOutput, difficulty, language, createdAt
+        FROM problems
+        ORDER BY createdAt DESC
+    </select>
+    <select id="getProblemsByLanguageAndDifficulty" parameterType="map" resultType="www.silver.vo.ProblemVO">
+        SELECT problemId, title, description, sampleInput, sampleOutput, difficulty, language, createdAt
+        FROM problems
+        <where>
+            <if test="language != null and language != ''">
+                language = #{language}
+            </if>
+            <if test="difficulty != null and difficulty != ''">
+                AND difficulty = #{difficulty}
+            </if>
+        </where>
+        ORDER BY createdAt DESC
+    </select>
+    <select id="getProblemById" parameterType="int" resultType="www.silver.vo.ProblemVO">
+        SELECT problemId, title, description, sampleInput, sampleOutput, difficulty, language, createdAt
+        FROM problems
+        WHERE problemId = #{problemId}
+    </select>
+</mapper>

@@ -1,0 +1,221 @@
+/* 뉴스 컨테이너 스타일 - top.jsp와 충돌하지 않도록 네임스페이스 적용 */
+.news-container {
+	margin-top: 30px;
+    background-color: #f9f9f9;
+    min-height: calc(100vh - 200px);
+    padding: 20px 0;
+}
+
+.news-wrapper {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.news-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 30px;
+    padding: 20px 0;
+    border-bottom: 2px solid #e0e0e0;
+}
+
+.news-container .news-item {
+    margin-bottom: 25px;
+    padding: 20px;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    background-color: #fff;
+    transition: box-shadow 0.2s ease;
+}
+
+.news-container .news-item:hover {
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+}
+
+.news-container .news-title {
+    font-weight: bold;
+    font-size: 1.2em;
+    color: #0078d7 !important;
+    text-decoration: none;
+}
+
+.news-container .news-title:hover {
+    text-decoration: underline;
+}
+
+.news-container .news-date {
+    color: #888;
+    font-size: 0.9em;
+    margin-left: 10px;
+}
+
+.news-container .news-category {
+    color: #0078d7;
+    font-size: 0.9em;
+    margin-left: 10px;
+    background-color: #e6f2ff;
+    padding: 2px 8px;
+    border-radius: 12px;
+}
+
+.news-container .news-description {
+    margin: 12px 0 16px;
+    color: #555;
+    line-height: 1.5;
+}
+
+.news-container .original-link {
+    color: #0078d7 !important;
+    text-decoration: none;
+    font-size: 0.9em;
+    display: inline-block;
+    margin-top: 8px;
+}
+
+.news-container .original-link:hover {
+    text-decoration: underline;
+}
+
+.news-container .no-news {
+    text-align: center;
+    color: #666;
+    font-size: 1.1em;
+    margin-top: 50px;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    border: 1px solid #e0e0e0;
+}
+
+.news-container .loading {
+    text-align: center;
+    color: #0078d7;
+    font-size: 1.1em;
+    margin-top: 50px;
+    animation: fadeInOut 1.5s infinite;
+}
+
+@keyframes fadeInOut {
+    0% { opacity: 0.6; }
+    50% { opacity: 1; }
+    100% { opacity: 0.6; }
+}
+
+/* it뉴스 페이징을 게시판과 동일하게 */
+.news-container .pagination {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    gap: 18px;
+    margin: 32px 0 24px 0;
+    padding: 0;
+    background: none;
+    border: none;
+}
+
+.news-container .pagination a,
+.news-container .pagination span {
+    display: inline-block;
+    font-size: 20px;
+    color: #495057;
+    text-decoration: none;
+    font-weight: 500;
+    background: none;
+    border: none;
+    padding: 0 8px;
+    transition: color 0.18s;
+    cursor: pointer;
+    box-shadow: none;
+    border-radius: 0;
+    line-height: 1.2;
+}
+
+.news-container .pagination a:hover,
+.news-container .pagination a:focus {
+    color: #1a73e8;
+    background: none;
+    text-decoration: none;
+}
+
+.news-container .pagination .current,
+.news-container .pagination span.current {
+    color: #1a73e8;
+    font-weight: 700;
+    position: relative;
+    background: none;
+    cursor: default;
+}
+
+.news-container .pagination .disabled,
+.news-container .pagination span.disabled {
+    color: #adb5bd;
+    cursor: not-allowed;
+    background: none;
+}
+
+.search-container {
+	width: 100%;
+	margin: 30px 0;
+	padding: 20px;
+	background-color: #fff;
+	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+	border: 1px solid #dee2e6;
+}
+
+.searchArea {
+	display: flex;
+	align-items: center;
+	gap: 12px;
+	justify-content: center;
+	flex-wrap: wrap;
+}
+
+.searchArea select {
+	padding: 10px 14px;
+	border: 2px solid #e9ecef;
+	font-size: 14px;
+	background-color: #fff;
+	color: #495057;
+	min-width: 160px;
+	transition: all 0.3s ease;
+	appearance: none;
+	background-repeat: no-repeat;
+	background-position: right 12px center;
+	background-size: 12px;
+	padding-right: 35px;
+}
+
+.searchArea input[type="search"] {
+	padding: 10px 14px;
+	border: 2px solid #e9ecef;
+	font-size: 14px;
+	font-weight: bold;
+	min-width: 250px;
+	transition: all 0.3s ease;
+	background-color: #fff;
+}
+
+.searchArea button {
+	padding: 10px 20px;
+	background-color: #343a40; /* 차콜 그레이 */
+    color: #fff;
+	border: none;
+	font-size: 14px;
+	font-weight: bold;
+	cursor: pointer;
+	transition: all 0.3s ease;
+	display: inline-flex;
+	align-items: center;
+	gap: 6px;
+}
+.searchArea button:hover {
+    background-color: #495057;
+}
+
+.searchArea button i {
+	font-size: 13px;
+}
+
+

@@ -1,0 +1,461 @@
+@charset "UTF-8";
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	font-family: 'Noto Sans KR', Arial, sans-serif;
+	background-color: #f8f9fa;
+	color: #343a40;
+	line-height: 1.6;
+}
+
+.container {
+	max-width: 1280px;
+	margin: 0 auto;
+	padding: 0 20px;
+	display: flex;
+	flex-wrap: wrap;
+	gap: 20px;
+}
+
+/* 게시글 작성/수정 페이지 스타일 - 크기 확장 */
+.write-form-container {
+	background-color: #fff;
+	padding: 30px 40px;
+	border-radius: 12px;
+	box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+	width: 100%;
+	max-width: 900px; /* 기존 700px에서 900px로 확장 */
+	margin: 40px auto;
+}
+
+.write-form-container h2 {
+	text-align: center;
+	color: #343a40;
+	margin-bottom: 30px;
+	font-size: 28px;
+	font-weight: 700;
+	position: relative;
+}
+
+.write-form-container h2::after {
+	content: '';
+	position: absolute;
+	bottom: -10px;
+	left: 50%;
+	transform: translateX(-50%);
+	width: 60px;
+	height: 3px;
+	background: linear-gradient(135deg, #007bff, #0056b3);
+	border-radius: 2px;
+}
+
+/* 테이블 스타일 개선 */
+.write-form-container table {
+	width: 100%;
+	border-collapse: collapse;
+}
+
+.write-form-container td {
+	padding: 15px 0; /* 각 입력 필드 간 여백 추가 */
+	vertical-align: top;
+}
+
+.form-label {
+	display: block;
+	margin-bottom: 12px; /* 기존 8px에서 12px로 확장 */
+	font-weight: 600;
+	color: #495057;
+	font-size: 16px; /* 기존 14px에서 16px로 확장 */
+}
+
+.form-label.required::after {
+	content: ' *';
+	color: #dc3545;
+	font-weight: bold;
+}
+
+/* 언어 선택 드롭다운 크기 대폭 확장 */
+.language-select {
+	width: 100%;
+	padding: 15px 20px; /* 기존 12px 16px에서 확장 */
+	border: 2px solid #e9ecef;
+	border-radius: 8px;
+	font-size: 16px; /* 기존 15px에서 16px로 확장 */
+	font-family: inherit;
+	background-color: #fff;
+	color: #495057;
+	transition: all 0.3s ease;
+	appearance: none;
+	background-image:
+		url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"><path fill="%23495057" d="M8 11L3 6h10l-5 5z"/></svg>');
+	background-repeat: no-repeat;
+	background-position: right 15px center; /* 기존 12px에서 15px로 조정 */
+	background-size: 18px; /* 기존 16px에서 18px로 확장 */
+	cursor: pointer;
+	min-height: 55px; /* 최소 높이 설정으로 더 큰 드롭다운 */
+}
+
+.language-select:focus {
+	outline: none;
+	border-color: #007bff;
+	box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.1);
+}
+
+.language-select option {
+	padding: 12px; /* 기존 10px에서 12px로 확장 */
+	font-size: 15px; /* 기존 14px에서 15px로 확장 */
+}
+
+/* 입력 필드 크기 대폭 확장 */
+.write-form-container input[type="text"], .write-form-container textarea
+	{
+	width: 100%;
+	padding: 15px 20px; /* 기존 12px 16px에서 확장 */
+	border: 2px solid #e9ecef;
+	border-radius: 8px;
+	box-sizing: border-box;
+	font-size: 16px; /* 기존 15px에서 16px로 확장 */
+	font-family: inherit;
+	transition: all 0.3s ease;
+	background-color: #fff;
+}
+
+/* 제목 입력 필드 특별 스타일 */
+.write-form-container input[type="text"] {
+	min-height: 55px; /* 제목 입력칸 높이 설정 */
+}
+
+.write-form-container input[type="text"]:focus, .write-form-container textarea:focus
+	{
+	border-color: #007bff;
+	outline: none;
+	box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.1);
+}
+
+/* 텍스트 영역 크기 대폭 확장 */
+.write-form-container textarea {
+	resize: vertical;
+	min-height: 320px; /* 기존 200px에서 320px로 대폭 확장 */
+	line-height: 1.8; /* 기존 1.6에서 1.8로 확장 */
+}
+
+/* 파일 업로드 스타일 개선 */
+.write-form-container input[type="file"] {
+	width: 100%;
+	padding: 15px 20px; /* 패딩 확장 */
+	border: 2px dashed #e9ecef;
+	border-radius: 8px;
+	background-color: #f8f9fa;
+	cursor: pointer;
+	font-size: 15px; /* 폰트 크기 확장 */
+	transition: all 0.3s ease;
+	min-height: 50px; /* 최소 높이 설정 */
+}
+
+.write-form-container input[type="file"]:hover {
+	border-color: #007bff;
+	background-color: #e3f2fd;
+}
+
+.btn-container {
+	display: flex;
+	justify-content: center;
+	gap: 15px;
+	margin-top: 30px;
+}
+
+.btn {
+	padding: 12px 30px;
+	border: none;
+	border-radius: 8px;
+	font-size: 15px;
+	font-weight: 600;
+	cursor: pointer;
+	text-decoration: none;
+	color: #fff;
+	display: inline-flex;
+	align-items: center;
+	gap: 8px;
+	transition: all 0.3s ease;
+	min-width: 120px;
+	justify-content: center;
+}
+
+.btn-primary {
+	background: #1976d2; /* 진한 파란색 */
+	color: #fff;
+	border: none;
+	border-radius: 8px;
+	padding: 12px 30px;
+	font-size: 15px;
+	font-weight: 600;
+	cursor: pointer;
+	text-decoration: none;
+	display: inline-flex;
+	align-items: center;
+	gap: 8px;
+	transition: background 0.2s, box-shadow 0.2s;
+	min-width: 120px;
+	justify-content: center;
+	box-shadow: 0 2px 6px rgba(25, 118, 210, 0.08);
+}
+
+.btn-primary:hover, .btn-primary:focus {
+	background: #1565c0; /* hover 시 더 진한 파랑 */
+	box-shadow: 0 4px 12px rgba(25, 118, 210, 0.12);
+}
+
+/* 푸터 스타일 */
+.footer {
+	background-color: #343a40;
+	color: #fff;
+	padding: 20px 0;
+	text-align: center;
+	margin-top: 40px;
+	width: 100%;
+}
+
+.footer-links a {
+	color: #adb5bd;
+	margin: 0 12px;
+	text-decoration: none;
+	font-size: 14px;
+}
+
+.footer-links a:hover {
+	color: #fff;
+}
+
+.footer p {
+	font-size: 13px;
+	margin-top: 8px;
+	color: #adb5bd;
+}
+
+/* 반응형 디자인 개선 */
+@media ( max-width : 900px) {
+	.container {
+		flex-direction: column;
+	}
+	.write-form-container {
+		padding: 25px 20px; /* 모바일에서 패딩 조정 */
+		margin: 20px auto;
+		max-width: 100%;
+	}
+	.write-form-container h2 {
+		font-size: 24px;
+	}
+	.btn-container {
+		flex-direction: column;
+		align-items: center;
+	}
+	.btn {
+		width: 100%;
+		max-width: 200px;
+	}
+
+	/* 모바일에서 입력 필드 패딩 조정 */
+	.language-select, .write-form-container input[type="text"],
+		.write-form-container textarea, .write-form-container input[type="file"]
+		{
+		padding: 12px 15px;
+		font-size: 15px;
+	}
+	.language-select {
+		min-height: 50px;
+	}
+	.write-form-container input[type="text"] {
+		min-height: 50px;
+	}
+	.write-form-container textarea {
+		min-height: 280px;
+	}
+}
+
+@media ( max-width : 600px) {
+	.write-form-container {
+		padding: 20px 15px;
+	}
+	.language-select, .write-form-container input[type="text"],
+		.write-form-container textarea, .write-form-container input[type="file"]
+		{
+		padding: 10px 12px;
+		font-size: 14px;
+	}
+	.language-select {
+		min-height: 45px;
+	}
+	.write-form-container input[type="text"] {
+		min-height: 45px;
+	}
+	.write-form-container textarea {
+		min-height: 250px;
+	}
+}
+
+/* CodeMirror 에디터 스타일 */
+.CodeMirror {
+	border: 2px solid #e9ecef;
+	border-radius: 8px;
+	font-size: 14px;
+	height: 350px; /* 고정 높이 설정 */
+	font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
+	background-color: #2b2b2b; /* darcula 테마와 일치 */
+	color: #a9b7c6;
+	line-height: 1.5;
+	transition: all 0.3s ease;
+}
+
+.CodeMirror:focus-within {
+	border-color: #007bff;
+	box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.15);
+}
+
+/* CodeMirror 내부 요소 스타일링 */
+.CodeMirror-lines {
+	padding: 15px 0; /* 상하 여백 */
+}
+
+.CodeMirror-line {
+	padding: 0 15px; /* 좌우 여백 */
+}
+
+/* 줄 번호 스타일 */
+.CodeMirror-gutters {
+	background-color: #313335;
+	border-right: 1px solid #555;
+	padding-right: 10px;
+}
+
+.CodeMirror-linenumber {
+	color: #606366;
+	font-size: 13px;
+	padding: 0 8px;
+	text-align: right;
+}
+
+/* 현재 줄 하이라이팅 */
+.CodeMirror-activeline-background {
+	background-color: #323232 !important;
+}
+
+
+/* 선택 영역 스타일 */
+.CodeMirror-selected {
+	background-color: #214283 !important;
+}
+
+.CodeMirror-focused .CodeMirror-selected {
+	background-color: #214283 !important;
+}
+
+/* 괄호 매칭 스타일 */
+.CodeMirror-matchingbracket {
+	background-color: #3b514d !important;
+	color: #ffef28 !important;
+	font-weight: bold;
+}
+
+.CodeMirror-nonmatchingbracket {
+	background-color: #a82400 !important;
+	color: #fff !important;
+}
+
+/* 코드 섹션 라벨 스타일 개선 */
+.code-section .form-label {
+	margin-top: 20px;
+	margin-bottom: 15px;
+	font-size: 16px;
+	font-weight: 600;
+	color: #495057;
+	display: flex;
+	align-items: center;
+	gap: 8px;
+}
+
+.code-section .form-label i {
+	color: #007bff;
+	font-size: 18px;
+}
+
+.code-section .text-muted {
+	font-size: 13px;
+	color: #6c757d;
+	font-weight: 400;
+	margin-left: 8px;
+}
+
+
+.CodeMirror-scrollbar-filler, .CodeMirror-gutter-filler {
+	background-color: #2b2b2b;
+}
+
+.CodeMirror-vscrollbar::-webkit-scrollbar, .CodeMirror-hscrollbar::-webkit-scrollbar
+	{
+	width: 12px;
+	height: 12px;
+}
+
+.CodeMirror-vscrollbar::-webkit-scrollbar-track, .CodeMirror-hscrollbar::-webkit-scrollbar-track
+	{
+	background: #2b2b2b;
+}
+
+.CodeMirror-vscrollbar::-webkit-scrollbar-thumb, .CodeMirror-hscrollbar::-webkit-scrollbar-thumb
+	{
+	background: #555;
+	border-radius: 6px;
+}
+
+.CodeMirror-vscrollbar::-webkit-scrollbar-thumb:hover,
+	.CodeMirror-hscrollbar::-webkit-scrollbar-thumb:hover {
+	background: #777;
+}
+
+/* 반응형 디자인 */
+@media ( max-width : 900px) {
+	.CodeMirror {
+		height: 300px;
+		font-size: 13px;
+	}
+	.CodeMirror-lines {
+		padding: 10px 0;
+	}
+	.CodeMirror-line {
+		padding: 0 10px;
+	}
+}
+
+@media ( max-width : 600px) {
+	.CodeMirror {
+		height: 250px;
+		font-size: 12px;
+	}
+	.CodeMirror-gutters {
+		padding-right: 5px;
+	}
+	.CodeMirror-linenumber {
+		font-size: 11px;
+		padding: 0 5px;
+	}
+}
+
+/* 코드 에디터 로딩 상태 */
+.code-editor-loading {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 350px;
+	background-color: #f8f9fa;
+	border: 2px dashed #dee2e6;
+	border-radius: 8px;
+	color: #6c757d;
+	font-size: 14px;
+}
+
+

@@ -1,0 +1,11 @@
+# 이 파일을 config.properties 로 복사한 뒤 값을 채운다.
+#   cp config.properties.example config.properties
+# config.properties 는 git에 커밋하지 않는다.
+
+db.url=jdbc:mysql://localhost:3306/bugbuster?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=Asia/Seoul
+db.username=root
+db.password=changeme
+
+# 네이버 뉴스 검색 API 키 (https://developers.naver.com/apps)
+naver.client.id=your_naver_client_id
+naver.client.secret=your_naver_client_secret

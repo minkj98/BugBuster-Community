@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="www.silver.dao.NewsSearchDAO">
+
+    <!-- 제목으로 검색 (페이징) -->
+    <select id="searchByTitle" parameterType="map" resultType="www.silver.vo.NewsVO">
+        SELECT newsId, title, originallink, link, description, pubDate, query, category
+        FROM news
+        WHERE title LIKE CONCAT('%', #{keyword}, '%')
+        ORDER BY pubDate DESC
+        LIMIT #{start}, #{limit}
+    </select>
+
+    <!-- 카테고리로 검색 (페이징) -->
+    <select id="searchByCategory" parameterType="map" resultType="www.silver.vo.NewsVO">
+        SELECT newsId, title, originallink, link, description, pubDate, query, category
+        FROM news
+        WHERE category LIKE CONCAT('%', #{keyword}, '%')
+        ORDER BY pubDate DESC
+        LIMIT #{start}, #{limit}
+    </select>
+
+    <!-- 제목 검색 결과 총 개수 -->
+    <select id="countByTitle" parameterType="string" resultType="int">
+        SELECT COUNT(*)
+        FROM news
+        WHERE title LIKE CONCAT('%', #{keyword}, '%')
+    </select>
+
+    <!-- 카테고리 검색 결과 총 개수 -->
+    <select id="countByCategory" parameterType="string" resultType="int">
+        SELECT COUNT(*)
+        FROM news
+        WHERE category LIKE CONCAT('%', #{keyword}, '%')
+    </select>
+</mapper>
