@@ -157,4 +157,6 @@ graphify-out/
 # local runtime config / secrets
 src/main/resources/config.properties
 src/main/resources/*-local.properties
-src/main/resources/secret.properties
+src/main/resources/secret.properties.serena/
+
+.serena/

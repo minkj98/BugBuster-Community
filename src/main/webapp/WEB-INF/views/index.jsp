@@ -13,18 +13,7 @@
 <script src="https://use.fontawesome.com/releases/v5.15.4/js/all.js"
 	defer></script>
 <style>
-* {
-	margin: 0;
-	padding: 0;
-	box-sizing: border-box;
-}
-
-body {
-	font-family: 'Noto Sans KR', Arial, sans-serif;
-	background-color: #f8f9fa;
-	color: #343a40;
-	line-height: 1.6;
-}
+/* 리셋 · body · 토큰은 base.css 소유 */
 
 .container {
 	max-width: 1280px;

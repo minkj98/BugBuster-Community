@@ -9,22 +9,13 @@
 <title>프로필 옵션</title>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 <style>
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
+/* 리셋 · 폰트 · 색은 base.css 소유. 페이지 고유 레이아웃만 유지 */
 body {
-    font-family: 'Noto Sans KR', Arial, sans-serif;
-    background-color: #f8f9fa; /* main.jsp, top.jsp와 동일 */
-    color: #343a40; /* main.jsp, top.jsp의 기본 텍스트 색상 */
-    line-height: 1.6;
     min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: flex-start;
-    padding: 30px 0; /* signup.jsp의 패딩 참고 */
+    padding: 30px 0;
 }
 
 .profile-container {

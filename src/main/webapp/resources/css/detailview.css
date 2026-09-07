@@ -14,10 +14,7 @@
 	--dracula-red: #ff5555;
 }
 
-body {
-	background: #f7f8fa;
-	font-family: 'Noto Sans KR', Arial, sans-serif;
-}
+/* body 리셋·폰트는 base.css 소유. 코드블록 dracula 토큰만 위에서 유지 */
 
 .container {
 	max-width: 900px;

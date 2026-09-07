@@ -5,13 +5,11 @@
 <html>
 <head>
     <title>에러 발생 | BugBuster</title>
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/base.css">
     <style>
+        /* 리셋 · 폰트 · 색은 base.css 소유. 페이지 고유 레이아웃만 유지 */
         body {
-            background: #f7fafc;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            color: #222;
             min-height: 100vh;
-            margin: 0;
             display: flex;
             flex-direction: column;
         }

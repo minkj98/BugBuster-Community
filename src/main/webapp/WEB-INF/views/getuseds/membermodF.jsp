@@ -10,17 +10,8 @@
 <script src="https://t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 <style>
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
+/* 리셋 · 폰트 · 색은 base.css 소유. 페이지 고유 레이아웃만 유지 */
 body {
-    font-family: 'Noto Sans KR', Arial, sans-serif;
-    background-color: #f8f9fa;
-    color: #343a40;
-    line-height: 1.6;
     min-height: 100vh;
     display: flex;
     justify-content: center;

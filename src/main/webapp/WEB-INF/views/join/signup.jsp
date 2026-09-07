@@ -15,10 +15,9 @@
 
 
 <style>
+/* 리셋 · 폰트 · 색은 base.css 소유. 페이지 고유 레이아웃만 유지 */
 body {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     background-color: #fafbfc;
-    margin: 0;
     padding: 30px 0;
     display: flex;
     justify-content: center;

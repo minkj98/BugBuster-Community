@@ -10,27 +10,12 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Community Header</title>
 <link rel="stylesheet"
-	href="${pageContext.request.contextPath}/resources/css/style.css">
+	href="${pageContext.request.contextPath}/resources/css/base.css">
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <style>
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
 html, body {
-    margin: 0;
-    padding: 0;
     width: 100%;
     overflow-x: hidden;
-}
-
-body {
-    font-family: 'Noto Sans KR', Arial, sans-serif;
-    background-color: #f8f9fa;
-    color: #343a40;
-    line-height: 1.6;
 }
 
 /* 헤더 스타일 - 수정 후 */

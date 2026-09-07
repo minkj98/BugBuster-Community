@@ -21,8 +21,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/mode/r/r.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/mode/julia/julia.min.js"></script>
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Noto Sans KR', Arial, sans-serif; background-color: #f8f9fa; color: #343a40; line-height: 1.6; }
+        /* 리셋 · body · 토큰은 base.css 소유 */
         .container { max-width: 1280px; margin: 0 auto; padding: 0 20px; display: flex; flex-wrap: wrap; gap: 20px; }
         .problem-container { background-color: #fff; padding: 30px 40px; border-radius: 12px; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); width: 100%; max-width: 900px; margin: 40px auto; }
         h1 { text-align: center; color: #343a40; margin-bottom: 20px; font-size: 28px; font-weight: 700; }

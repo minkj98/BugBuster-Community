@@ -1,0 +1,75 @@
+@charset "UTF-8";
+
+/* ==========================================================================
+   BugBuster - base layer
+   전역 리셋 + 디자인 토큰 + 폰트. 컴포넌트 클래스는 여기 두지 않는다.
+   (.btn / .container / .header 등은 각 페이지 CSS 소유)
+   ========================================================================== */
+
+/* Pretendard (한글 웹폰트). 오프라인이면 아래 fallback 체인으로 degrade. */
+@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css");
+
+:root {
+	/* ---- typography ---- */
+	--bb-font-sans: "Pretendard", "Pretendard Variable", -apple-system,
+		BlinkMacSystemFont, "Apple SD Gothic Neo", "Malgun Gothic",
+		"Noto Sans KR", Arial, sans-serif;
+	--bb-font-mono: "JetBrains Mono", "D2Coding", Consolas, Menlo,
+		"Courier New", monospace;
+
+	/* ---- neutrals (쿨 그레이 1체계) ---- */
+	--bb-bg: #f8f9fa;
+	--bb-surface: #ffffff;
+	--bb-border: #e4e7ec;
+	--bb-border-strong: #d0d7de;
+	--bb-text: #343a40;
+	--bb-text-muted: #667085;
+
+	/* ---- accent (블루 1값으로 고정) ---- */
+	--bb-accent: #2563eb;
+	--bb-accent-hover: #1d4ed8;
+	--bb-accent-weak: #eff4ff;
+
+	/* ---- semantic ---- */
+	--bb-danger: #dc2626;
+	--bb-danger-hover: #b91c1c;
+	--bb-success: #16a34a;
+	--bb-success-hover: #15803d;
+
+	/* ---- shape ---- */
+	--bb-radius: 10px;
+	--bb-radius-sm: 6px;
+	--bb-radius-pill: 999px;
+
+	/* ---- elevation (배경 hue에 맞춘 tinted shadow) ---- */
+	--bb-shadow-sm: 0 1px 2px rgba(16, 24, 40, .04);
+	--bb-shadow: 0 1px 2px rgba(16, 24, 40, .04), 0 4px 12px rgba(16, 24, 40, .06);
+
+	/* ---- layout ---- */
+	--bb-page-max: 1280px;
+}
+
+*,
+*::before,
+*::after {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+html {
+	-webkit-text-size-adjust: 100%;
+}
+
+body {
+	font-family: var(--bb-font-sans);
+	background-color: var(--bb-bg);
+	color: var(--bb-text);
+	line-height: 1.6;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+img {
+	max-width: 100%;
+}
