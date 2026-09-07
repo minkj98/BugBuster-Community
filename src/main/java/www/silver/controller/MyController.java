@@ -1,4 +1,4 @@
-package www.silver.hom;
+package www.silver.controller;
 
 import javax.annotation.Resource;
 

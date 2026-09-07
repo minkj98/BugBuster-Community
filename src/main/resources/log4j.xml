@@ -11,7 +11,7 @@
 	</appender>
 	
 	<!-- Application Loggers -->
-	<logger name="www.silver.hom">
+	<logger name="www.silver.controller">
 		<level value="info" />
 	</logger>
 	

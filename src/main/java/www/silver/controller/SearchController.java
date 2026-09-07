@@ -1,4 +1,4 @@
-package www.silver.hom;
+package www.silver.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;

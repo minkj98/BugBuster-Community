@@ -1,4 +1,4 @@
-package www.silver.hom;
+package www.silver.controller;
 
 import java.io.File;
 import java.util.ArrayList;
@@ -26,7 +26,7 @@ import www.silver.util.FileDataUtil;
 import www.silver.vo.MemberVO;
 
 @Controller
-public class signUpController {
+public class SignUpController {
 
 	@Inject
     SignUpService signupservice;
