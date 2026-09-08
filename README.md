@@ -5,7 +5,6 @@
 Spring Legacy(비 Spring Boot) 기반으로 진행한 2인 팀 프로젝트입니다.
 
 ## 기술 스택
-### 🛠️ 기술 스택 (Tech Stack)
 
 #### **언어 / 런타임**
 [![Java 8](https://img.shields.io/badge/Java_8-007396?style=for-the-badge&logo=openjdk&logoColor=white)](https://openjdk.org/)
@@ -21,7 +20,6 @@ Spring Legacy(비 Spring Boot) 기반으로 진행한 2인 팀 프로젝트입�
 #### **영속성 / 데이터베이스**
 [![MyBatis](https://img.shields.io/badge/MyBatis_3.5-CA1D25?style=for-the-badge&logo=mybatis&logoColor=white)](https://mybatis.org/)
 [![MySQL 8](https://img.shields.io/badge/MySQL_8-4479A1?style=for-the-badge&logo=mysql&logoColor=white)](https://www.mysql.com/)
-[![HikariCP](https://img.shields.io/badge/HikariCP_5.1-FF6B6B?style=for-the-badge)](https://github.com/brettwooldridge/HikariCP)
 
 #### **프론트엔드**
 [![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)](https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/HTML5)
@@ -31,10 +29,6 @@ Spring Legacy(비 Spring Boot) 기반으로 진행한 2인 팀 프로젝트입�
 #### **외부 API 연동**
 [![Naver News API](https://img.shields.io/badge/Naver_News_API-03C75A?style=for-the-badge&logo=naver&logoColor=white)](https://developers.naver.com/)
 [![Google Gemini](https://img.shields.io/badge/Google_Gemini-8E75B7?style=for-the-badge&logo=google-gemini&logoColor=white)](https://deepmind.google/technologies/gemini/)
-
-#### **클라이언트**
-[![Apache HttpClient](https://img.shields.io/badge/Apache_HttpClient-D70015?style=for-the-badge&logo=apache&logoColor=white)](https://hc.apache.org/)
-[![Jackson](https://img.shields.io/badge/Jackson-000000?style=for-the-badge)](https://github.com/FasterXML/jackson)
 
 #### **메일**
 [![JavaMail](https://img.shields.io/badge/JavaMail_1.6-007396?style=for-the-badge&logo=java&logoColor=white)](https://www.oracle.com/java/technologies/javamail.html)
@@ -54,16 +48,15 @@ Spring Legacy(비 Spring Boot) 기반으로 진행한 2인 팀 프로젝트입�
 
 #### **개발 도구**
 [![IntelliJ IDEA](https://img.shields.io/badge/IntelliJ_IDEA-000000?style=for-the-badge&logo=intellij-idea&logoColor=white)](https://www.jetbrains.com/idea/)
+[![STS](https://img.shields.io/badge/Spring_Tool_Suite-6DB33F?style=for-the-badge&logo=spring&logoColor=white)](https://spring.io/tools)
 [![DBeaver](https://img.shields.io/badge/DBeaver-382923?style=for-the-badge&logo=dbeaver&logoColor=white)](https://dbeaver.io/)
+[![DataGrip](https://img.shields.io/badge/DataGrip-21D789?style=for-the-badge&logo=datagrip&logoColor=white)](https://www.jetbrains.com/datagrip/)
 
-| 구분 | 사용 기술 |
-| --- | --- |
-| 언어 / 런타임 | Java 8, Servlet 3.1, JSP + JSTL |
-| 프레임워크 | Spring 4.3 (MVC, JDBC), Spring Batch 3.0, MyBatis 3 |
-| 데이터베이스 | MySQL (HikariCP / commons-dbcp) |
-| 빌드 | Maven (WAR 패키징) |
-| 외부 연동 | 네이버 뉴스 검색 API |
-| 기타 | Lombok, Jackson, log4j 1.2, javax.mail |
+#### **협업 / 커뮤니케이션**
+[![Slack](https://img.shields.io/badge/Slack-4A154B?style=for-the-badge&logo=slack&logoColor=white)](https://slack.com/)
+[![Discord](https://img.shields.io/badge/Discord-5865F2?style=for-the-badge&logo=discord&logoColor=white)](https://discord.com/)
+
+
 
 ## 주요 기능
 
