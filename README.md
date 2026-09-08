@@ -141,4 +141,3 @@ mvn clean package
 - 하드코딩된 업로드 경로(`file:/C:/tmp/`) OS 비의존적으로 변경
 - 테스트 코드 추가(`src/test` 부재)
 - log4j 1.2(지원 종료) → logback 또는 log4j2 마이그레이션
-- 검색 관련 컨트롤러 / DAO 중복 정리(`Search`, `NewsSearch`)

@@ -232,6 +232,14 @@
 			<scope>test</scope>
 		</dependency>
 
+		<!-- Mockito (Java 8 호환 마지막 3.x 라인) -->
+		<dependency>
+			<groupId>org.mockito</groupId>
+			<artifactId>mockito-core</artifactId>
+			<version>3.12.4</version>
+			<scope>test</scope>
+		</dependency>
+
 		<dependency>
 			<groupId>com.googlecode.json-simple</groupId>
 			<artifactId>json-simple</artifactId>
