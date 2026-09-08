@@ -4,8 +4,20 @@
 
 Spring Legacy(비 Spring Boot) 기반으로 진행한 2인 팀 프로젝트입니다.
 
-## 기술 스택
+# 추진 배경 및 기대효과
+## 추진 배경
+- 필요한 정보들이 여러 플랫폼에 분산되어 있어 이동으로 인한 시간 낭비와 집중력 분산을 경험
+- 각 플랫폼마다 다른 인터페이스로 인한 혼란
+- 같은 정보를 여러 플랫폼에 입력하는 중복 작업
+- 플랫폼 선택지 과다로 인한 피로감 상승
 
+## 기대 효과
+- 여러 플랫폼 이동에 소모되는 시간 제거함으로써 학습에만 집중할 수 있는 시간이 증대
+- 통합된 데이터로 개인화 추천 가능
+- 일관된 UI/UX로 직관적 사용
+- 커뮤니티 활성화
+
+# 기술 스택
 #### **언어 / 런타임**
 [![Java 8](https://img.shields.io/badge/Java_8-007396?style=for-the-badge&logo=openjdk&logoColor=white)](https://openjdk.org/)
 [![Maven](https://img.shields.io/badge/Maven-C71A36?style=for-the-badge&logo=apache-maven&logoColor=white)](https://maven.apache.org/)
