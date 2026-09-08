@@ -5,6 +5,56 @@
 Spring Legacy(비 Spring Boot) 기반으로 진행한 2인 팀 프로젝트입니다.
 
 ## 기술 스택
+### 🛠️ 기술 스택 (Tech Stack)
+
+#### **언어 / 런타임**
+[![Java 8](https://img.shields.io/badge/Java_8-007396?style=for-the-badge&logo=openjdk&logoColor=white)](https://openjdk.org/)
+[![Maven](https://img.shields.io/badge/Maven-C71A36?style=for-the-badge&logo=apache-maven&logoColor=white)](https://maven.apache.org/)
+
+#### **프레임워크**
+[![Spring Framework](https://img.shields.io/badge/Spring_Framework_4.3-6DB33F?style=for-the-badge&logo=spring&logoColor=white)](https://spring.io/projects/spring-framework)
+[![Spring MVC](https://img.shields.io/badge/Spring_MVC-6DB33F?style=for-the-badge&logo=spring&logoColor=white)](https://docs.spring.io/spring-framework/reference/web/webmvc.html)
+[![Spring Batch](https://img.shields.io/badge/Spring_Batch_3.0-6DB33F?style=for-the-badge&logo=spring&logoColor=white)](https://spring.io/projects/spring-batch)
+[![JSP](https://img.shields.io/badge/JSP-007396?style=for-the-badge&logo=java&logoColor=white)](https://www.oracle.com/java/technologies/jsp.html)
+[![JSTL](https://img.shields.io/badge/JSTL-007396?style=for-the-badge&logo=java&logoColor=white)](https://projects.eclipse.org/projects/ee4j.jsp)
+
+#### **영속성 / 데이터베이스**
+[![MyBatis](https://img.shields.io/badge/MyBatis_3.5-CA1D25?style=for-the-badge&logo=mybatis&logoColor=white)](https://mybatis.org/)
+[![MySQL 8](https://img.shields.io/badge/MySQL_8-4479A1?style=for-the-badge&logo=mysql&logoColor=white)](https://www.mysql.com/)
+[![HikariCP](https://img.shields.io/badge/HikariCP_5.1-FF6B6B?style=for-the-badge)](https://github.com/brettwooldridge/HikariCP)
+
+#### **프론트엔드**
+[![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)](https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/HTML5)
+[![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)](https://developer.mozilla.org/en-US/docs/Web/CSS)
+[![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
+
+#### **외부 API 연동**
+[![Naver News API](https://img.shields.io/badge/Naver_News_API-03C75A?style=for-the-badge&logo=naver&logoColor=white)](https://developers.naver.com/)
+[![Google Gemini](https://img.shields.io/badge/Google_Gemini-8E75B7?style=for-the-badge&logo=google-gemini&logoColor=white)](https://deepmind.google/technologies/gemini/)
+
+#### **클라이언트**
+[![Apache HttpClient](https://img.shields.io/badge/Apache_HttpClient-D70015?style=for-the-badge&logo=apache&logoColor=white)](https://hc.apache.org/)
+[![Jackson](https://img.shields.io/badge/Jackson-000000?style=for-the-badge)](https://github.com/FasterXML/jackson)
+
+#### **메일**
+[![JavaMail](https://img.shields.io/badge/JavaMail_1.6-007396?style=for-the-badge&logo=java&logoColor=white)](https://www.oracle.com/java/technologies/javamail.html)
+
+#### **로깅**
+[![SLF4J](https://img.shields.io/badge/SLF4J_1.6-4A90E2?style=for-the-badge)](https://www.slf4j.org/)
+[![Log4j](https://img.shields.io/badge/Log4j_1.2-F4E7C3?style=for-the-badge)](https://logging.apache.org/log4j/)
+
+#### **유틸리티**
+[![Lombok](https://img.shields.io/badge/Lombok_1.18-CA372D?style=for-the-badge)](https://projectlombok.org/)
+[![Commons FileUpload](https://img.shields.io/badge/Commons_FileUpload-D70015?style=for-the-badge&logo=apache&logoColor=white)](https://commons.apache.org/proper/commons-fileupload/)
+[![AspectJ](https://img.shields.io/badge/AspectJ-6DB33F?style=for-the-badge)](https://www.eclipse.org/aspectj/)
+
+#### **테스트**
+[![JUnit 4](https://img.shields.io/badge/JUnit_4-25A162?style=for-the-badge&logo=junit5&logoColor=white)](https://junit.org/junit4/)
+[![Mockito](https://img.shields.io/badge/Mockito_3.12-C5D9F1?style=for-the-badge)](https://site.mockito.org/)
+
+#### **개발 도구**
+[![IntelliJ IDEA](https://img.shields.io/badge/IntelliJ_IDEA-000000?style=for-the-badge&logo=intellij-idea&logoColor=white)](https://www.jetbrains.com/idea/)
+[![DBeaver](https://img.shields.io/badge/DBeaver-382923?style=for-the-badge&logo=dbeaver&logoColor=white)](https://dbeaver.io/)
 
 | 구분 | 사용 기술 |
 | --- | --- |
