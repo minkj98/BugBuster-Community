@@ -1,4 +1,4 @@
-[!팀 로고](./src/main/resources/static/img/BugBuster_main.png)
+![팀 로고](./src/main/resources/static/img/BugBuster_main.png)
 >개발자를 위한 커뮤니티 웹 애플리케이션입니다. Q&A 게시판, 알고리즘 문제 풀이, IT 뉴스 큐레이션 기능을 제공합니다.
 
 Spring Legacy(비 Spring Boot) 기반으로 진행한 2인 팀 프로젝트입니다.
