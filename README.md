@@ -1,19 +1,73 @@
-# BugBuster-Community
-
-개발자를 위한 커뮤니티 웹 애플리케이션입니다. Q&A 게시판, 알고리즘 문제 풀이, IT 뉴스 큐레이션 기능을 제공합니다.
+[!팀 로고](./src/main/resources/static/img/BugBuster_main.png)
+>개발자를 위한 커뮤니티 웹 애플리케이션입니다. Q&A 게시판, 알고리즘 문제 풀이, IT 뉴스 큐레이션 기능을 제공합니다.
 
 Spring Legacy(비 Spring Boot) 기반으로 진행한 2인 팀 프로젝트입니다.
 
-## 기술 스택
+# 추진 배경 및 기대효과
+## 추진 배경
+- 필요한 정보들이 여러 플랫폼에 분산되어 있어 이동으로 인한 시간 낭비와 집중력 분산을 경험
+- 각 플랫폼마다 다른 인터페이스로 인한 혼란
+- 같은 정보를 여러 플랫폼에 입력하는 중복 작업
+- 플랫폼 선택지 과다로 인한 피로감 상승
 
-| 구분 | 사용 기술 |
-| --- | --- |
-| 언어 / 런타임 | Java 8, Servlet 3.1, JSP + JSTL |
-| 프레임워크 | Spring 4.3 (MVC, JDBC), Spring Batch 3.0, MyBatis 3 |
-| 데이터베이스 | MySQL (HikariCP / commons-dbcp) |
-| 빌드 | Maven (WAR 패키징) |
-| 외부 연동 | 네이버 뉴스 검색 API |
-| 기타 | Lombok, Jackson, log4j 1.2, javax.mail |
+## 기대 효과
+- 여러 플랫폼 이동에 소모되는 시간 제거함으로써 학습에만 집중할 수 있는 시간이 증대
+- 통합된 데이터로 개인화 추천 가능
+- 일관된 UI/UX로 직관적 사용
+- 커뮤니티 활성화
+
+# 기술 스택
+#### **언어 / 런타임**
+[![Java 8](https://img.shields.io/badge/Java_8-007396?style=for-the-badge&logo=openjdk&logoColor=white)](https://openjdk.org/)
+[![Maven](https://img.shields.io/badge/Maven-C71A36?style=for-the-badge&logo=apache-maven&logoColor=white)](https://maven.apache.org/)
+
+#### **프레임워크**
+[![Spring Framework](https://img.shields.io/badge/Spring_Framework_4.3-6DB33F?style=for-the-badge&logo=spring&logoColor=white)](https://spring.io/projects/spring-framework)
+[![Spring MVC](https://img.shields.io/badge/Spring_MVC-6DB33F?style=for-the-badge&logo=spring&logoColor=white)](https://docs.spring.io/spring-framework/reference/web/webmvc.html)
+[![Spring Batch](https://img.shields.io/badge/Spring_Batch_3.0-6DB33F?style=for-the-badge&logo=spring&logoColor=white)](https://spring.io/projects/spring-batch)
+[![JSP](https://img.shields.io/badge/JSP-007396?style=for-the-badge&logo=java&logoColor=white)](https://www.oracle.com/java/technologies/jsp.html)
+[![JSTL](https://img.shields.io/badge/JSTL-007396?style=for-the-badge&logo=java&logoColor=white)](https://projects.eclipse.org/projects/ee4j.jsp)
+
+#### **영속성 / 데이터베이스**
+[![MyBatis](https://img.shields.io/badge/MyBatis_3.5-CA1D25?style=for-the-badge&logo=mybatis&logoColor=white)](https://mybatis.org/)
+[![MySQL 8](https://img.shields.io/badge/MySQL_8-4479A1?style=for-the-badge&logo=mysql&logoColor=white)](https://www.mysql.com/)
+
+#### **프론트엔드**
+[![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)](https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/HTML5)
+[![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)](https://developer.mozilla.org/en-US/docs/Web/CSS)
+[![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
+
+#### **외부 API 연동**
+[![Naver News API](https://img.shields.io/badge/Naver_News_API-03C75A?style=for-the-badge&logo=naver&logoColor=white)](https://developers.naver.com/)
+[![Google Gemini](https://img.shields.io/badge/Google_Gemini-8E75B7?style=for-the-badge&logo=google-gemini&logoColor=white)](https://deepmind.google/technologies/gemini/)
+
+#### **메일**
+[![JavaMail](https://img.shields.io/badge/JavaMail_1.6-007396?style=for-the-badge&logo=java&logoColor=white)](https://www.oracle.com/java/technologies/javamail.html)
+
+#### **로깅**
+[![SLF4J](https://img.shields.io/badge/SLF4J_1.6-4A90E2?style=for-the-badge)](https://www.slf4j.org/)
+[![Log4j](https://img.shields.io/badge/Log4j_1.2-F4E7C3?style=for-the-badge)](https://logging.apache.org/log4j/)
+
+#### **유틸리티**
+[![Lombok](https://img.shields.io/badge/Lombok_1.18-CA372D?style=for-the-badge)](https://projectlombok.org/)
+[![Commons FileUpload](https://img.shields.io/badge/Commons_FileUpload-D70015?style=for-the-badge&logo=apache&logoColor=white)](https://commons.apache.org/proper/commons-fileupload/)
+[![AspectJ](https://img.shields.io/badge/AspectJ-6DB33F?style=for-the-badge)](https://www.eclipse.org/aspectj/)
+
+#### **테스트**
+[![JUnit 4](https://img.shields.io/badge/JUnit_4-25A162?style=for-the-badge&logo=junit5&logoColor=white)](https://junit.org/junit4/)
+[![Mockito](https://img.shields.io/badge/Mockito_3.12-C5D9F1?style=for-the-badge)](https://site.mockito.org/)
+
+#### **개발 도구**
+[![IntelliJ IDEA](https://img.shields.io/badge/IntelliJ_IDEA-000000?style=for-the-badge&logo=intellij-idea&logoColor=white)](https://www.jetbrains.com/idea/)
+[![STS](https://img.shields.io/badge/Spring_Tool_Suite-6DB33F?style=for-the-badge&logo=spring&logoColor=white)](https://spring.io/tools)
+[![DBeaver](https://img.shields.io/badge/DBeaver-382923?style=for-the-badge&logo=dbeaver&logoColor=white)](https://dbeaver.io/)
+[![DataGrip](https://img.shields.io/badge/DataGrip-21D789?style=for-the-badge&logo=datagrip&logoColor=white)](https://www.jetbrains.com/datagrip/)
+
+#### **협업 / 커뮤니케이션**
+[![Slack](https://img.shields.io/badge/Slack-4A154B?style=for-the-badge&logo=slack&logoColor=white)](https://slack.com/)
+[![Discord](https://img.shields.io/badge/Discord-5865F2?style=for-the-badge&logo=discord&logoColor=white)](https://discord.com/)
+
+
 
 ## 주요 기능
 
